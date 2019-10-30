@@ -61,6 +61,9 @@ public class EmployeeController {
         model.addAttribute("eventNum", weekEvents.size());
         model.addAttribute("weekEvents", weekEvents);
         EmployeeOfWeek selectedEOW = weeks.findFirstByWeekStarting(now.with(fieldISO, 1));
+        if (selectedEOW == null) {
+            selectedEOW = weeks.findFirstByOrderByIdDesc();
+        }
         model.addAttribute("employeeOfWeek", selectedEOW);
         if (null != principal) {
             Employee currentUser = employees.findByEmail(principal.getName());
