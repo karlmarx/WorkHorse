@@ -1,0 +1,100 @@
+1,Meeting,Professional conference to discuss upcoming business decisions
+2,Team Building,"Exercises in teamwork, motivation, and companionship"
+3,Llama Piñata Party,Informal parties to celebrate recent efforts or to relieve stress
+
+41,War,Carnage,1,1,carnage.war@warhorse.com,bodycount9353,contact name,-1555,address,1000-01-01,,100,SSN,1,0,,0,0,unknown,unknown
+42,Scarlet,Schmitt,2,2,schmitt.scarlet@warhorse.com,colorR3d,contact name,-1555,address,2016-03-25,,21,SSN,1,0,,0,0,unknown,unknown
+43,Hunter,Schuler,2,5,schuler.hunter@srmsolutions.com,pasword123,contact name,-1555,address,2019-10-21,,0,SSN,1,0,,0,0,unknown,unknown
+44,Karl,Marx,2,4,marx.karl@srmsolutions.com,pasword123,contact name,-1555,address,2019-10-21,,0,SSN,1,0,,0,0,unknown,unknown
+45,Eric,Riddle,2,4,riddle.eric@srmsolutions.com,pasword123,contact name,-1555,address,2019-10-21,,0,SSN,1,0,,0,0,unknown,unknown
+46,Brennen,Southworth,2,4,southworth.brennen@srmsolutions.com,pasword123,contact name,-1555,address,2019-10-21,,0,SSN,1,0,,0,0,unknown,unknown
+47,Jane,Doe,3,3,doe.jane@warhorse.com,deerHunter!,contact name,-1555,address,2004-06-02,,60,SSN,2,0,,0,0,unknown,unknown
+48,John,Smith,4,3,smith.john@warhorse.com,456Secret,contact name,-1555,address,2019-10-03,,0,SSN,2,0,,0,0,unknown,unknown
+49,War,Carnage,1,1,carnage.war@warhorse.com,bodycount9353,contact name,-1555,address,1000-01-01,,100,SSN,1,0,,0,0,unknown,unknown
+50,Scarlet,Schmitt,2,2,schmitt.scarlet@warhorse.com,colorR3d,contact name,-1555,address,2016-03-25,,21,SSN,1,0,,0,0,unknown,unknown
+51,Hunter,Schuler,2,4,schuler.hunter@srmsolutions.com,pasword123,contact name,-1555,address,2019-10-21,,0,SSN,1,0,,0,0,unknown,unknown
+52,Karl,Marx,2,5,marx.karl@srmsolutions.com,pasword123,contact name,-1555,address,2019-10-21,,0,SSN,1,0,,0,0,unknown,unknown
+53,Eric,Riddle,2,5,riddle.eric@srmsolutions.com,pasword123,contact name,-1555,address,2019-10-21,,0,SSN,1,0,,0,0,unknown,unknown
+54,Brennen,Southworth,2,4,southworth.brennen@srmsolutions.com,pasword123,contact name,-1555,address,2019-10-21,,0,SSN,1,0,,0,0,unknown,unknown
+55,Jane,Doe,3,3,doe.jane@warhorse.com,deerHunter!,contact name,-1555,address,2004-06-02,,60,SSN,2,0,,0,0,unknown,unknown
+56,John,Smith,4,3,smith.john@warhorse.com,456Secret,contact name,-1555,address,2019-10-03,,0,SSN,2,0,,0,0,unknown,unknown
+57,gfs,"",1,1,"",,,,"Calle del Poeta Joan Maragall, 23, Madrid, Spain",2019-10-26,2019-10-26,0,"",52,0,"",0,0,"",","
+58,Eric,Riddle,6,3,riddle.e.w@gmail.com,,,,"212 W Collins Ct, Louisville, KY, USA",2019-10-26,2019-10-26,0,2,43,0,"",0,0,6064349996,","
+
+4,45,2019-10-21,Im the best
+5,45,2019-10-28,Still the best
+6,46,2019-10-14,"Oops, forgot that I was best"
+
+1,adlsfkj,1,2019-10-24,2019-10-24,zsdklj,asdjfl,20.000000,20.000000,0
+5,Quarterly Budget Review,1,2019-11-20,2019-11-20,no comment,Conference Room 103,0.000000,0.000000,0
+6,Were all in this Together,2,2019-10-25,2019-10-25,Lets work together to create a better office space,Conference Room 302,20.000000,20.000000,1
+7,Llama Party!,3,2019-10-31,2019-10-31,Relax and enjoy some candy with your coworkers! Be sure to dress up for the holiday!,Conference Room 302,5.000000,5.000000,1
+8,something,1,2019-10-16,2019-10-25,asdfjalksj,ajfkls,0.000000,10.000000,0
+9,something,1,2019-10-16,2019-10-25,asdfjalksj,ajfkls,0.000000,10.000000,0
+
+1,1
+1,2
+5,3
+6,1
+7,1
+8,2
+9,2
+
+41,1
+42,1
+42,5
+47,5
+48,6
+41,7
+42,7
+43,8
+44,8
+45,9
+46,9
+47,9
+48,9
+
+41,1
+42,1
+43,1
+42,5
+44,5
+47,5
+48,6
+41,7
+42,7
+43,7
+43,8
+44,8
+44,9
+45,9
+46,9
+47,9
+48,9
+
+1,CEO,"The Chief Executive Officer, the highest-ranking person in the company and is ultimately responsible for making managerial decisions",Executive
+2,HR Representative,"Responsible for recruiting, vetting, selecting, hiring,",Human Resources
+3,Soldier,Basic infantry of the WarHorse Army,Army
+4,Developer,Code monkey,IT Development
+5,Manager,manager,""
+
+1,sales
+2,marketing
+3,pr
+
+1,Admin,Has all access privileges
+2,HR,Manages employee data. Has Event Organizer access privileges in addition to adding/modifying employee data
+3,EO,"Has User access privileges and is able to add, edit, and delete events"
+4,User,"Able to view employees, events, and employee of the week data"
+5,Admin,Has all access privileges
+6,HR,Manages employee data. Has Event Organizer access privileges in addition to adding/modifying employee data
+7,EO,"Has User access privileges and is able to add, edit, and delete events"
+8,User,"Able to view employees, events, and employee of the week data"
+9,Admin,Has all access privileges
+10,HR,Manages employee data. Has Event Organizer access privileges in addition to adding/modifying employee data
+11,EO,"Has User access privileges and is able to add, edit, and delete events"
+12,User,"Able to view employees, events, and employee of the week data"
+13,Admin,Has all access privileges
+14,HR,Manages employee data. Has Event Organizer access privileges in addition to adding/modifying employee data
+15,EO,"Has User access privileges and is able to add, edit, and delete events"
+16,User,"Able to view employees, events, and employee of the week data"
