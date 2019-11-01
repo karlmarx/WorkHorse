@@ -4,7 +4,7 @@
 <head>
     <!--/*/ <th:block th:include="fragments/stylingFragment.html :: head">
             </th:block> /*/-->
-
+    <link href="https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css" rel="stylesheet">
     <style>
 
 
@@ -70,7 +70,7 @@
         .box .inputBox input:not([value=""]) ~ label {
             top: -1.125rem;
             left: 0;
-            color: #800000;
+            color: #d9534f;
             font-size: 0.75rem;
         }
 
@@ -78,7 +78,7 @@
             border: none;
             outline: none;
             color: #fff;
-            background-color: #800000;
+            background-color: #d9534f;
             padding: 0.625rem 1.25rem;
             cursor: pointer;
             border-radius: 0.312rem;
@@ -86,7 +86,7 @@
         }
 
         .box input[type="submit"]:hover {
-            background-color: #800000;
+            background-color: black;
         }
 
 
@@ -781,7 +781,32 @@
     </script>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/solid.css">
 </head>
-<div th:replace="fragments/stylingFragment.html:: navbar"></div>
+
+  <nav class="navbar navbar-expand-sm n bg-danger mb-3">
+
+
+          <div class="container">
+              <a class="navbar-brand" href="http://www.karlmarxindustries.com"><img th:src="@{img/iconLogoNav.png}" width="35"></a>
+              <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
+                      aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarNav">
+
+
+                  <ul class="navbar-nav ml-auto">
+                      <a href="/loginGood" class="btn btn-primary btn-lg" role="button" aria-pressed="true">Good Login</a>
+
+
+
+
+                  </ul>
+              </div>
+          </div>
+      </nav>
+
+
+
 
 <body translate="no">
 <div class="box">
@@ -818,7 +843,7 @@
                 <div class="form-group">
                     <div class="col-md-offset-4 col-md-8">
                         <input type="submit" 
-                               class="btn btn-primary" 
+                               class="btn btn-danger" 
                                id="search-button" 
                                value="Sign In"/>
                     </div>
@@ -912,6 +937,7 @@
 </div>
 </div>
 
+<script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
 
 </body>
 </html>

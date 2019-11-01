@@ -47,8 +47,14 @@
                                    class="form-control" th:value="${employeeOfWeek.description}"/>
                         </div>
                     </div>
+                    <span  th:if="${userGood} == true">
                     <button type="submit" class="btn btn-primary">
                         Edit Employee of Week</button>
+                    </span>
+                    <span  th:if="${userGood} == false">
+                    <button type="submit" class="btn btn-danger">
+                        Edit Employee of Week</button>
+                    </span>
                 </form>
             </div>
         </div>

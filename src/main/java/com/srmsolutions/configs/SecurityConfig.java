@@ -32,8 +32,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter implements WebM
                 .authorizeRequests()
                     .antMatchers("/admin").hasRole("ADMIN")
                     .antMatchers("/event","/addEvent","/editEvent", "/deleteEvent").hasAnyRole("ADMIN", "EO")
-                    .antMatchers("/employee", "/addEmployee", "/editEmployee", "/deleteEmployee").hasAnyRole("ADMIN", "HR")
-                    .antMatchers("/", "/home", "/employees", "/events").permitAll()
+                    .antMatchers("/employee", "/addEmployee", "/deleteEmployee").hasAnyRole("ADMIN", "HR")
+                    .antMatchers("/", "/home", "/employees", "/editEmployee", "/events").permitAll()
                     .antMatchers("/css/**", "/js/**", "/fonts/**", "/img/**").permitAll()
 
                 .and()

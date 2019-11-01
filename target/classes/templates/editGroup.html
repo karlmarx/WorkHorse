@@ -53,8 +53,17 @@
 
 
                     <!--                        <input type="hidden" name="id" th:value="${organization.id}"/>-->
+                    <span  th:if="${userGood} == true">
+                    <button type="submit" class="btn btn-primary">
+                        Edit Group</button>
+                    </span>
+                    <span  th:if="${userGood} == false">
                     <button type="submit" class="btn btn-danger">
                         Edit Group</button>
+                    </span>
+
+                        
+                    
                 </form>
             </div>
             <div class="col-2"></div>

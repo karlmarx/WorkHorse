@@ -93,7 +93,7 @@ public class EmployeeOfWeekController {
         eow.setWeekStarting(weekStarting);
         eow.setEmployee(employees.findById(Integer.parseInt(r.getParameter("employeeId"))).orElse(null));
         weeks.save(eow);
-        ra.addFlashAttribute("message", "Employee of the Week: " + eow.getEmployee().getFirstName() + " " + eow.getEmployee().getLastName() + " has been successfully added.");
+        ra.addFlashAttribute("message", "Employee of the Week: <a href='/employee/" + eow.getEmployee().getId() + "'>" + eow.getEmployee().getFirstName() + " " + eow.getEmployee().getLastName() +  "</a> has been successfully added.");
         return "redirect:/employeeOfWeeks";
     }
     
@@ -121,14 +121,15 @@ public class EmployeeOfWeekController {
         LocalDate weekStarting = LocalDate.parse(weekStart);
         eow.setWeekStarting(weekStarting);
         weeks.save(eow);
-        ra.addFlashAttribute("message", "Employee of the Week: " + eow.getEmployee().getFirstName() + " " + eow.getEmployee().getLastName() + " has been successfully edited.");
+        ra.addFlashAttribute("message", "Employee of the Week: <a href='/employee/" + eow.getEmployee().getId() + "'>" + eow.getEmployee().getFirstName() + " " + eow.getEmployee().getLastName() +  "</a> has been successfully edited.");
         return "redirect:/employeeOfWeeks";
     }
     
     @GetMapping("/deleteEmployeeOfWeek")
     public String deleteEmployeeOfWeek(Integer id, RedirectAttributes ra){
+        EmployeeOfWeek toDelete = weeks.findById(id).orElseThrow(() -> new IllegalArgumentException("Invalid event Id:" + id));
         weeks.deleteById(id);
-        ra.addFlashAttribute("message", "Employee of the Week has been successfully deleted.");
+        ra.addFlashAttribute("message", "Employee of the Week: " + toDelete.getEmployee().getFirstName() + " " + toDelete.getEmployee().getLastName() + " has been successfully deleted.");
         return "redirect:/employeeOfWeeks";
     }
     

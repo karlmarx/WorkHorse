@@ -45,6 +45,11 @@ public class EmployeeController {
         return "login";
     }
 
+    @RequestMapping("/loginGood")
+    public String loginGood() {
+        return "loginGood";
+    }
+
     @RequestMapping("/login-error")
     public String loginError(Model model) {
         model.addAttribute("loginError", true);

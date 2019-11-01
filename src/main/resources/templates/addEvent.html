@@ -147,6 +147,9 @@
                             <label class="input-group-text" for="group">Organizing Group</label>
                         </div>
                         <select class="custom-select" id="group" name="group">
+                            <option value="none" selected disabled hidden>
+                                Select an organizing group
+                            </option>
                             <option th:each="group : ${groupList}"
                                     th:value="${group.id}"
                                     th:text="${group.name}" >Organizing Group</option>
@@ -157,6 +160,9 @@
                             <label class="input-group-text" for="organizer">Individual Organizer</label>
                         </div>
                         <select class="custom-select" id="organizer" name="organizer">
+                            <option value="none" selected disabled hidden>
+                                Select an individual organizer
+                            </option>
                             <option th:each="organizer : ${organizers}"
                                     th:value="${organizer.id}"
                                     th:text="${organizer.firstName} + ' ' + ${organizer.lastName}" >Organizer</option>

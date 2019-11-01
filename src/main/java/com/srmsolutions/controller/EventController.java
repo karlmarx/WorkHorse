@@ -111,19 +111,12 @@ public class EventController {
     
     @PostMapping("/addEvent")
     public String addEvent(Event event, HttpServletRequest r, ModelMap model, RedirectAttributes ra){
-//        String[] employeeAttendingIds = r.getParameterValues("addAttendingEmployeeId");
         String[] employeeInvitedIds = r.getParameterValues("addInvitedEmployeeId");
         String[] categoryIds = r.getParameterValues("addCategoryId");
         String location = r.getParameter("placeName");
         event.setLocation(location);
         event.setOrganizer(employees.findById(Integer.parseInt(r.getParameter("organizer"))).orElse(null));
         event.setOrganizingGroup(groups.findById(Integer.parseInt(r.getParameter("group"))).orElse(null));
-//        List<Employee> employeeAttendingList = new ArrayList<>();
-//        for(String employeeAttendingId : employeeAttendingIds){
-//            employeeAttendingList.add(employees.findById(Integer.parseInt(employeeAttendingId)).orElse(null));
-//        }
-        
-        
         
         List<Category> categoryList = new ArrayList<>();
         for(String categoryId : categoryIds){
@@ -136,7 +129,6 @@ public class EventController {
         }
         
         event.setCategoryList(categoryList);
-//        event.setAttendingList(employeeAttendingList);
         event.setInviteList(employeeInvitedList);
         
         event.setName(r.getParameter("eventName"));
@@ -152,7 +144,7 @@ public class EventController {
         }
         
         event.setDescription(r.getParameter("description"));
-//        event.setLocation(r.getParameter("location"));
+        
         if(r.getParameter("isRequired") != null){
             event.setRequired(true);
         } else {
@@ -168,7 +160,7 @@ public class EventController {
         event.setLongitude(longitude);
         
         events.save(event);
-        ra.addFlashAttribute("message", "Event: " + event.getName() + " has been successfully added.");
+        ra.addFlashAttribute("message", "Event: <a onclick='javascript:openEventModal(" + event.getId() + ");'>" + event.getName() + "</a> has been successfully added.");
         return "redirect:/events";
     }
     
@@ -211,13 +203,6 @@ public class EventController {
         return "editEvent";
     }
 
-//    @PostMapping("/editEvent")
-//    public String performEditEvent(HttpServletRequest r, RedirectAttributes ra){
-//        int id = Integer.parseInt(r.getParameter("id"));
-//        Event event = events.findById(id).orElse(null);
-//        event
-//    }
-
     @PostMapping("/editEvent")
     public String performEditEvent(HttpServletRequest r, RedirectAttributes ra){
         String[] employeeAttendingIds = r.getParameterValues("editAttendingEmployeeId");
@@ -250,8 +235,6 @@ public class EventController {
             employeeAttendingList.add(employees.findById(Integer.parseInt(employeeAttendingId)).orElse(null));
         }
         
-
-        
         List<Category> categoryList = new ArrayList<>();
         for(String categoryId : categoryIds){
             categoryList.add(categories.findById(Integer.parseInt(categoryId)).orElse(null));
@@ -269,17 +252,16 @@ public class EventController {
         event.setEndTime(endTime);
         
         events.save(event);
-        ra.addFlashAttribute("message", "Event: " + event.getName() + " has been successfully edited.");
+        ra.addFlashAttribute("message", "Event: <a onclick='javascript:openEventModal(" + event.getId() + ");'>" + event.getName() + "</a> has been successfully edited.");
 
         return "redirect:/events";
     }
 
-    
-    
     @GetMapping("/deleteEvent")
     public String deleteEvent(Integer id, RedirectAttributes ra){
+        Event toDelete = events.findById(id).orElseThrow(() -> new IllegalArgumentException("Invalid event Id:" + id));
         events.deleteById(id);
-        ra.addFlashAttribute("message", "Event has been successfully deleted.");
+        ra.addFlashAttribute("message", "Event: " + toDelete.getName() + " has been successfully deleted.");
         return "redirect:/events";
     }
 }
