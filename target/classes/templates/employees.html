@@ -6,7 +6,12 @@
             </th:block> /*/-->
 
 <style>
-
+    /*.paging_full_numbers a.paginate_button {*/
+    /*    color: black !important;*/
+    /*}*/
+    /*.paging_full_numbers a.paginate_active {*/
+    /*    color: white !important;*/
+    /*}*/
 </style>
 
 </head>
@@ -125,7 +130,8 @@
             <tbody>
 
             <tr th:each="employee:${employees}">
-                <td><div class="d-flex justify-content-center"><a href="#" th:href="@{editEmployee(id=${employee.id})}"><i class="fas fa-edit"></i></a>
+                <td><div class="d-flex justify-content-between">
+                    <div class="d-flex justify-content-center"><a href="#" th:href="@{editEmployee(id=${employee.id})}"><i class="fas fa-edit"></i></a>
                     <a  th:href="'#confirmDelete' + ${employee.id}" sec:authorize="hasAnyRole('ROLE_HR', 'ROLE_ADMIN')" class="trigger-btn" data-toggle="modal"><i class="fas fa-minus-square"></i></a>
                     <div th:id="'confirmDelete' + ${employee.id}" class="modal fade" style="font-family: 'Varela Round', sans-serif;">
                         <div class="modal-dialog modal-confirm">
@@ -154,7 +160,7 @@
                         </div>
                     </div>
                <a href="#" th:href="'/employee/' + ${employee.id}"><i class="fas fa-info-circle"></i></a></div>
-                    </td>
+                </div> </td>
 
                 <td th:text="${employee.id}">Emp Id</td>
                 <td th:text="${employee.firstName} + ' ' + ${employee.lastName}">Name</td>

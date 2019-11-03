@@ -1,6 +1,6 @@
 <!doctype html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org"
-      xmlns="http://www.w3.org/1999/xhtml">
+      xmlns="http://www.w3.org/1999/xhtml" xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
 <head>
     <!--/*/ <th:block th:include="fragments/stylingFragment.html :: head">
             </th:block> /*/-->
@@ -108,7 +108,7 @@
                                 Mobile Phone</span></div>
                         <input type="tel" class="form-control"  name="mobilePhone" th:value="${employee.mobilePhone}" id="mobilePhone"  aria-label="mobilePhone" aria-describedby="basic-addon14">
                     </div>
-
+                    <div sec:authorize="hasAnyRole('ROLE_HR', 'ROLE_ADMIN')">
                     <div class="input-group mb-3">
                         <div class="input-group-prepend">
                             <label class="input-group-text" for="manager">Manager</label>
@@ -147,7 +147,7 @@
                             Hours of PTO</span></div>
                         <input type="number" class="form-control"  name="hoursPto" id="hoursPto" th:value="${employee.hoursPto}" required aria-label="mobilePhone" aria-describedby="basic-addon14" value="0">
                     </div>
-
+                    </div>
 
                     <div class="input-group mb-3">
                         <div class="input-group-prepend">
@@ -161,42 +161,40 @@
                         </div>
                         <input type="tel" class="form-control" th:value="${employee.emergencyContactNumber}" name="emergencyNumber" id="emergencyNumber" required aria-label="emergencyNumber" aria-describedby="basic-addon1100">
                     </div>
-                    <div class="d-flex justify-content-between">
-                        <div>  <input type="checkbox"  id="isGood" name="isGood" th:checked="${employee.good}" data-toggle="toggle" data-on="Good" data-off="Bad" data-onstyle="primary" data-offstyle="danger" data-size="large">
-                        </div><div >     <input type="checkbox" id="isHr" name="isHr"  data-toggle="toggle" th:checked="${employee.hr}" data-on="HR" data-off="Not HR" data-onstyle="info" data-size="large">
-                    </div>  <div > <input type="checkbox"   id="isAdmin" name="isAdmin" data-toggle="toggle" th:checked="${employee.admin}" data-on="Admin" data-off="Not Admin" data-onstyle="warning" data-size="large">
-                    </div>
-                    </div><br>
-                    <div class="input-group mb-3">
-                        <div class="input-group-prepend">
+                    <div sec:authorize="hasAnyRole('ROLE_HR', 'ROLE_ADMIN')">
+                        <div class="d-flex justify-content-between">
+                            <div>  <input type="checkbox" id="isGood" name="isGood" th:checked="${employee.good}" data-toggle="toggle" data-on="Good" data-off="Bad" data-onstyle="primary" data-offstyle="danger" data-size="large">
+                            </div><div >     <input type="checkbox" id="isHr" name="isHr" data-toggle="toggle" th:checked="${employee.hr}" data-on="HR" data-off="Not HR" data-onstyle="info" data-size="large">
+                        </div>  <div > <input type="checkbox"   id="isAdmin" name="isAdmin" data-toggle="toggle" th:checked="${employee.admin}" data-on="Admin" data-off="Not Admin" data-onstyle="warning" data-size="large">
+                        </div>
+                        </div><br>
+
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
                             <span class="input-group-text" id="basic-addon156">
                             Social Security Number</span></div>
-                        <input type="number" class="form-control"  name="ssn" id="ssn" required aria-label="mobilePhone" th:value="${employee.ssn}" aria-describedby="basic-addon156" placeholder="xxx-xx-xxxx">
-                    </div>
+                            <input type="number" class="form-control" name="ssn" id="ssn" required aria-label="mobilePhone" th:value="${employee.ssn}" aria-describedby="basic-addon156" placeholder="xxx-xx-xxxx">
+                        </div>
 
-                    <div class="input-group mb-3">
-                        <div class="input-group-prepend">
+
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
                             <span class="input-group-text" id="basic-addon125">
                             Date of Hire</span></div>
-                        <input class="form-control" type="date" value="2019-10-26" id="hireDate" name="hireDate" th:value="${employee.hireDate}" required >
-                    </div>
-                    <div class="input-group mb-3">
-                        <div class="input-group-prepend">
-                            <span class="input-group-text" id="basic-addon125">
-                            Date of Hire</span></div>
-                        <input class="form-control" type="date" value="2019-10-26" th:value="${employee.hireDate}" id="hireDate" name="hireDate" required>
-                    </div>
-                    <div class="input-group mb-3">
-                        <div class="input-group-prepend">
-                            <span class="input-group-text" id="basic-addon127">Date of Termination</span></div>
+                            <input class="form-control" type="date" value="2019-10-26" th:value="${employee.hireDate}" id="hireDate" name="hireDate" required>
+                        </div>
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text" id="basic-addon127">Date of Termination</span></div>
 
-                        <input class="form-control" type="date"  id="termDate" th:value="${employee.termDate}" name="termDate">
+                            <input class="form-control" type="date" id="termDate" th:value="${employee.termDate}" name="termDate">
+                        </div>
                     </div>
 
 
                     <span  th:if="${userGood} == true"><button type="submit" class="btn btn-primary">
                         Edit Employee</button>          </span><span   th:if="${userGood} == false">         <button type="submit" class="btn btn-danger" >
-                    Edit Emplouee</button></span>
+                    Edit Employee</button></span>
 
 
                 </form>

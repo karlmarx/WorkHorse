@@ -43,7 +43,9 @@
 
 
                         <tr th:each="employeeOfWeek:${employeeOfWeeks}">
-                            <td><div class="d-flex justify-content-center"><a href="#" th:href="@{editEmployeeOfWeek(id=${employeeOfWeek.id})}"><i class="fas fa-edit" style="color: black;"></i></a>
+                            <td>              <div class="d-flex justify-content-between">
+
+                                <a href="#" th:href="@{editEmployeeOfWeek(id=${employeeOfWeek.id})}"><i class="fas fa-edit" style="color: black;"></i></a>
                                     <a  th:href="'#confirmDelete' + ${employeeOfWeek.id}" class="trigger-btn" data-toggle="modal"><i class="fas fa-minus-square " style="color: black;"></i></a>
                                     <div th:id="'confirmDelete' + ${employeeOfWeek.id}" class="modal fade" style="font-family: 'Varela Round', sans-serif;">
                                         <div class="modal-dialog modal-confirm">

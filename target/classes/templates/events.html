@@ -1,6 +1,6 @@
 <!doctype html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org"
-      xmlns="http://www.w3.org/1999/xhtml">
+      xmlns="http://www.w3.org/1999/xhtml" xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
 <head>
     <!--/*/ <th:block th:include="fragments/stylingFragment.html :: head">
             </th:block> /*/-->
@@ -96,13 +96,14 @@
             <tbody>
 
             <tr th:each="event:${events}">
-                <td><div class="d-flex justify-content-between">
+                <td>
                 	<div sec:authorize="hasAnyRole('ROLE_EO', 'ROLE_ADMIN')">
-                
+              <div class="d-flex justify-content-between">
                     
                 	<a href="#" th:href="@{editEvent(id=${event.id})}"><i class="fas fa-edit" style="color:black;"></i> </a>
                     <a  th:href="'#confirmDelete' + ${event.id}" class="trigger-btn" data-toggle="modal"><i class="fas fa-minus-square " style="color:black"></i> </a>
-                </div>
+
+
                     <div th:id="'confirmDelete' + ${event.id}" class="modal fade" style="font-family: 'Varela Round', sans-serif;">
                         <div class="modal-dialog modal-confirm">
                             <div class="modal-content">
@@ -130,7 +131,7 @@
                     </div>
 
                     <a  th:onclick="'javascript:openEventModal(\'' + ${event.id} + '\');'"><i class="fas fa-info-circle "></i></a></div>
-
+                    </div>
 
                 </td>
 
@@ -178,7 +179,8 @@
             <tbody>
 
             <tr th:each="event:${events}">
-                <td><div class="d-flex justify-content-center">
+                <td>
+                    <div class="d-flex justify-content-between">
                     <div sec:authorize="hasAnyRole('ROLE_EO', 'ROLE_ADMIN')">
                 
                     

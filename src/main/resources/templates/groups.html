@@ -1,6 +1,6 @@
 <!doctype html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org"
-      xmlns="http://www.w3.org/1999/xhtml">
+      xmlns="http://www.w3.org/1999/xhtml" xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
 <head>
     <!--/*/ <th:block th:include="fragments/stylingFragment.html :: head">
             </th:block> /*/-->
@@ -33,7 +33,7 @@
             <div class="card-columns">
             <div class=" card text-white bg-primary mb-3" style="max-width: 25rem;"  th:each="orgGroup:${allGroups}">
                 <div class="card-header" ><h3 th:text="${orgGroup.name}" ></h3></div>
-                <div class="card-body">
+                <div class="card-body bg-secondary">
                     <div class="">
                         <span>Members    </span>
                         <span class="badge badge-light badge-pill" th:text="${orgGroup.employeeList.size()}" ></span>
@@ -79,7 +79,8 @@
             <div class="card-columns">
             <div class=" card text-white bg-danger mb-3" style="max-width: 25rem;"  th:each="orgGroup:${allGroups}">
                 <div class="card-header" ><h3 th:text="${orgGroup.name}" ></h3></div>
-                <div class="card-body">Members: <span class="badge badge-light badge-pill" th:text="${orgGroup.employeeList.size()}"></span>
+                <div class="card-body bg-secondary">Members: <span class="badge badge-light badge-pill"
+                                                                   th:text="${orgGroup.employeeList.size()}"></span>
                 </div>
                 <ul class="list-group text-danger list-group-flush">
                     <li class="list-group-item text-danger "  th:each="employee:${orgGroup.employeeList}" th:text="${employee.firstName} + ' ' +${employee.lastName}">name</li>
